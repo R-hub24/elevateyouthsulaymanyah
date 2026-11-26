@@ -1,885 +1,1123 @@
+
 <!DOCTYPE html>
 <html lang="ku" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سیستەمی تۆمارکردنی مەڵبەندی ١ی سلێمانی - بەشی گەنجان</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-green: #1b4332;
-            --secondary-green: #2d6a4f;
-            --accent-green: #40916c;
-            --light-green: #d8f3dc;
-            --soft-green: #eef8f0;
-            --bg-color: #f4f9f4;
-            --white: #ffffff;
-            --text-dark: #212529;
-            --border-color: #ced4da;
-            --danger: #c1121f;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مەڵبەندی ١ی سلێمانی - بەشی گەنجان</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Noto Kufi Arabic', sans-serif;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+<style>
+:root {
+    --primary-green:#1b4332;
+    --secondary-green:#2d6a4f;
+    --accent-green:#40916c;
+    --light-green:#d8f3dc;
+    --soft-green:#eef8f0;
+    --bg-color:#f4f9f4;
+    --white:#fff;
+    --text-dark:#212529;
+    --border-color:#ced4da;
+    --danger:#c1121f;
+}
 
-        header {
-            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
-            color: var(--white);
-            padding: 1.8rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:'Noto Kufi Arabic',sans-serif;
+}
 
-        .brand-logo-img {
-            width: 150px;
-            height: auto;
-            background: var(--white);
-            border-radius: 14px;
-            padding: 8px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.22);
-            border: 3px solid var(--light-green);
-            object-fit: contain;
-        }
+body {
+    background:var(--bg-color);
+    color:var(--text-dark);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
 
-        header h1 {
-            font-size: 1.35rem;
-            font-weight: 700;
-        }
+header {
+    background:linear-gradient(135deg,var(--primary-green),var(--secondary-green));
+    color:white;
+    padding:1.8rem 1rem;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
 
-        .container {
-            max-width: 920px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            flex: 1;
-            width: 100%;
-        }
+header h1 {
+    font-size:1.35rem;
+    font-weight:700;
+}
 
-        /* Landing / Welcome Screen */
-        .welcome-card {
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 12px 32px rgba(27, 67, 50, 0.1);
-            padding: 2.5rem 2rem;
-            text-align: center;
-            border: 1px solid #dce8df;
-        }
+.container {
+    max-width:920px;
+    margin:2rem auto;
+    padding:0 1rem;
+    flex:1;
+    width:100%;
+}
 
-        .welcome-logo-img {
-            width: 170px;
-            height: auto;
-            margin: 0 auto 1.2rem auto;
-            display: block;
-            border-radius: 14px;
-            border: 2px solid #b7e4c7;
-            padding: 6px;
-            background: #ffffff;
-        }
+.welcome-card {
+    background:white;
+    border-radius:20px;
+    box-shadow:0 12px 32px rgba(27,67,50,.1);
+    padding:2.5rem 2rem;
+    text-align:center;
+    border:1px solid #dce8df;
+}
 
-        .welcome-slogan {
-            display: inline-block;
-            background: var(--light-green);
-            color: var(--primary-green);
-            font-weight: 900;
-            font-size: 1.4rem;
-            padding: 0.7rem 1.8rem;
-            border-radius: 50px;
-            margin-bottom: 1.5rem;
-            border: 1px solid #b7e4c7;
-        }
+.welcome-slogan {
+    display:inline-block;
+    background:var(--light-green);
+    color:var(--primary-green);
+    font-weight:900;
+    font-size:1.4rem;
+    padding:.7rem 1.8rem;
+    border-radius:50px;
+    margin-bottom:1.5rem;
+}
 
-        .welcome-text {
-            max-width: 680px;
-            margin: 0 auto 2.2rem auto;
-            font-size: 1.08rem;
-            line-height: 2;
-            color: #2b3a32;
-            font-weight: 500;
-        }
+.welcome-text {
+    max-width:680px;
+    margin:0 auto 2.2rem;
+    font-size:1.08rem;
+    line-height:2;
+    color:#2b3a32;
+    font-weight:500;
+}
 
-        .start-btn {
-            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
-            color: var(--white);
-            border: none;
-            padding: 15px 42px;
-            font-size: 1.15rem;
-            font-weight: 700;
-            border-radius: 12px;
-            cursor: pointer;
-            box-shadow: 0 6px 18px rgba(27, 67, 50, 0.25);
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
+.start-btn {
+    background:linear-gradient(135deg,var(--secondary-green),var(--primary-green));
+    color:white;
+    border:none;
+    padding:15px 42px;
+    font-size:1.15rem;
+    font-weight:700;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(27,67,50,.25);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
 
-        .start-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 22px rgba(27, 67, 50, 0.3);
-        }
+.start-btn:hover {
+    transform:translateY(-2px);
+}
 
-        /* Form Card */
-        .card {
-            background: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 2rem;
-        }
+.card {
+    background:white;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    overflow:hidden;
+    border:1px solid #e2e8f0;
+    margin-bottom:2rem;
+}
 
-        .card-header {
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 1.4rem;
-            text-align: center;
-            position: relative;
-        }
+.card-header {
+    background:var(--primary-green);
+    color:white;
+    padding:1.4rem;
+    text-align:center;
+    position:relative;
+}
 
-        .card-header h2 {
-            color: var(--light-green);
-            font-size: 1.4rem;
-        }
+.card-header h2 {
+    color:var(--light-green);
+    font-size:1.4rem;
+}
 
-        .back-home-btn {
-            position: absolute;
-            right: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.15);
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 6px 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
+.back-home-btn {
+    position:absolute;
+    right:16px;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(255,255,255,.15);
+    color:white;
+    border:1px solid rgba(255,255,255,.3);
+    padding:6px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
 
-        .back-home-btn:hover {
-            background: rgba(255,255,255,0.25);
-        }
+.card-body {
+    padding:2rem;
+}
 
-        .card-body {
-            padding: 2rem;
-        }
+.form-group {
+    margin-bottom:1.35rem;
+}
 
-        .form-group {
-            margin-bottom: 1.35rem;
-        }
+label {
+    display:block;
+    margin-bottom:.45rem;
+    font-weight:700;
+    color:var(--primary-green);
+    font-size:.95rem;
+}
 
-        label {
-            display: block;
-            margin-bottom: 0.45rem;
-            font-weight: 700;
-            color: var(--primary-green);
-            font-size: 0.95rem;
-        }
+.req {
+    color:var(--danger);
+}
 
-        .req {
-            color: var(--danger);
-        }
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+select {
+    width:100%;
+    padding:11px 14px;
+    border:1px solid var(--border-color);
+    border-radius:8px;
+    font-size:.95rem;
+    background:#fafafa;
+}
 
-        input[type="text"],
-        input[type="tel"],
-        input[type="email"],
-        input[type="number"],
-        select {
-            width: 100%;
-            padding: 11px 14px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 0.95rem;
-            background-color: #fafafa;
-            transition: all 0.25s;
-        }
+input:focus,select:focus {
+    outline:none;
+    border-color:var(--accent-green);
+    background:white;
+    box-shadow:0 0 0 3px rgba(64,145,108,.15);
+}
 
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--accent-green);
-            background-color: var(--white);
-            box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.15);
-        }
+.dynamic-box {
+    background:var(--soft-green);
+    padding:1.2rem;
+    border-radius:10px;
+    border:1px solid #b7e4c7;
+    margin-top:.8rem;
+    margin-bottom:1.3rem;
+    display:none;
+}
 
-        .dynamic-box {
-            background: var(--soft-green);
-            padding: 1.2rem;
-            border-radius: 10px;
-            border: 1px solid #b7e4c7;
-            margin-top: 0.8rem;
-            margin-bottom: 1.3rem;
-            display: none;
-        }
+.team-input {
+    margin-bottom:.75rem;
+}
 
-        .family-member-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            background: var(--white);
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #cde7d5;
-            margin-bottom: 10px;
-        }
+.submit-btn {
+    background:var(--secondary-green);
+    color:white;
+    border:none;
+    width:100%;
+    padding:14px;
+    font-size:1.08rem;
+    font-weight:700;
+    border-radius:10px;
+    cursor:pointer;
+    margin-top:.8rem;
+}
 
-        .family-member-title {
-            grid-column: 1 / -1;
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: var(--secondary-green);
-        }
+.submit-btn:hover:not(:disabled) {
+    background:var(--primary-green);
+}
 
-        .team-input {
-            margin-bottom: 0.75rem;
-        }
+.submit-btn:disabled {
+    opacity:.7;
+    cursor:not-allowed;
+}
 
-        .submit-btn {
-            background: var(--secondary-green);
-            color: var(--white);
-            border: none;
-            width: 100%;
-            padding: 14px;
-            font-size: 1.08rem;
-            font-weight: 700;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.3s;
-            margin-top: 0.8rem;
-        }
+#successSection {
+    display:none;
+    text-align:center;
+    background:white;
+    padding:2.5rem 2rem;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+    border:2px solid var(--accent-green);
+}
 
-        .submit-btn:hover:not(:disabled) {
-            background: var(--primary-green);
-        }
+.success-icon {
+    font-size:3.5rem;
+    color:var(--secondary-green);
+    margin-bottom:1rem;
+}
 
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
+.congrats-banner {
+    background:var(--light-green);
+    color:var(--primary-green);
+    padding:1.4rem;
+    border-radius:12px;
+    font-size:1.2rem;
+    font-weight:800;
+    line-height:1.8;
+    margin:1rem auto 1.8rem;
+    max-width:650px;
+}
 
-        /* Success Message Screen */
-        #successSection {
-            display: none;
-            text-align: center;
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.09);
-            border: 2px solid var(--accent-green);
-        }
+#adminSection {
+    display:none;
+    margin-top:2rem;
+}
 
-        .success-icon {
-            font-size: 3.5rem;
-            color: var(--secondary-green);
-            margin-bottom: 1rem;
-        }
+.admin-cards-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:1.5rem;
+    margin-top:1rem;
+}
 
-        .congrats-banner {
-            background: var(--light-green);
-            color: var(--primary-green);
-            padding: 1.4rem;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 800;
-            line-height: 1.8;
-            margin: 1rem auto 1.8rem auto;
-            max-width: 650px;
-            border: 1px solid #95d5b2;
-        }
+.member-id-card {
+    background:linear-gradient(145deg,#fff,#f3faf5);
+    border:2px solid var(--secondary-green);
+    border-radius:14px;
+    overflow:hidden;
+}
 
-        /* Admin Section & ID Cards */
-        #adminSection {
-            display: none;
-            margin-top: 2rem;
-        }
+.member-id-header {
+    background:linear-gradient(135deg,var(--primary-green),var(--secondary-green));
+    color:white;
+    padding:12px 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+}
 
-        .admin-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
+.member-id-badge {
+    background:var(--light-green);
+    color:var(--primary-green);
+    font-size:.78rem;
+    font-weight:800;
+    padding:3px 9px;
+    border-radius:20px;
+}
 
-        .member-id-card {
-            background: linear-gradient(145deg, #ffffff, #f3faf5);
-            border: 2px solid var(--secondary-green);
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-        }
+.member-id-body {
+    padding:14px 16px;
+    font-size:.9rem;
+    line-height:1.8;
+    overflow-wrap:anywhere;
+}
 
-        .member-id-header {
-            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
-            color: var(--white);
-            padding: 12px 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.member-id-body p {
+    border-bottom:1px dashed #dce7df;
+    padding:4px 0;
+}
 
-        .member-id-header h4 {
-            font-size: 1rem;
-            font-weight: 700;
-        }
+.sub-list-box {
+    background:#eef8f0;
+    border-radius:8px;
+    padding:8px 10px;
+    margin-top:6px;
+    font-size:.85rem;
+}
 
-        .member-id-badge {
-            background: var(--light-green);
-            color: var(--primary-green);
-            font-size: 0.78rem;
-            font-weight: 800;
-            padding: 3px 9px;
-            border-radius: 20px;
-        }
+.admin-btn-container {
+    text-align:center;
+    margin:2.5rem 0;
+}
 
-        .member-id-body {
-            padding: 14px 16px;
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
+.admin-login-btn {
+    background:transparent;
+    color:#6c757d;
+    border:1px dashed #ced4da;
+    padding:8px 20px;
+    border-radius:50px;
+    cursor:pointer;
+}
 
-        .member-id-body p {
-            border-bottom: 1px dashed #dce7df;
-            padding: 4px 0;
-        }
+@media(max-width:600px) {
+    .card-body {
+        padding:1.2rem;
+    }
 
-        .member-id-body p:last-child {
-            border-bottom: none;
-        }
+    .back-home-btn {
+        position:static;
+        transform:none;
+        margin-bottom:8px;
+    }
 
-        .sub-list-box {
-            background: #eef8f0;
-            border-radius: 8px;
-            padding: 8px 10px;
-            margin-top: 6px;
-            font-size: 0.85rem;
-        }
+    .card-header {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+}
 
-        .admin-btn-container {
-            text-align: center;
-            margin: 2.5rem 0;
-        }
+@media print {
+    body * {
+        visibility:hidden;
+    }
 
-        .admin-login-btn {
-            background: transparent;
-            color: #6c757d;
-            border: 1px dashed #ced4da;
-            padding: 8px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
+    #adminSection,#adminSection * {
+        visibility:visible;
+    }
 
-        .admin-login-btn:hover {
-            color: var(--primary-green);
-            border-color: var(--primary-green);
-        }
+    #adminSection {
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        margin:0;
+    }
 
-        @media (max-width: 600px) {
-            .family-member-row {
-                grid-template-columns: 1fr;
-            }
-            .back-home-btn {
-                position: static;
-                transform: none;
-                margin-bottom: 8px;
-                display: inline-block;
-            }
-        }
-
-        @media print {
-            body * {
-                visibility: hidden;
-            }
-            #adminSection, #adminSection * {
-                visibility: visible;
-            }
-            #adminSection {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                margin: 0;
-                box-shadow: none;
-            }
-            .no-print {
-                display: none !important;
-            }
-        }
-    </style>
+    .no-print {
+        display:none!important;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <header class="no-print">
-        <h1>مەڵبەندی ١ی سلێمانی</h1>
-                <h1>  بەشی گەنجان</h1>
+<header class="no-print">
+    <h1>مەڵبەندی ١ی سلێمانی</h1>
+    <h1>بەشی گەنجان</h1>
+</header>
 
-    </header>
+<div class="container">
 
-    <div class="container">
-        <!-- لاپەڕەی یەکەم -->
-        <section class="welcome-card no-print" id="landingSection">
-            <div class="welcome-slogan">ئێمە بۆ یەکێتی و یەکێتیش بۆ هەمووان</div>
-            <p class="welcome-text">
-                پێکەوە خزمەتی شار و وڵات دەکەین ، هانی خۆمان و گەنجان دەدەین بۆ بنیاتنان و داهێنان ، وە پێکەوە ئەو دەرگایانە دەکەینەوە کە بە تەنها ناکرێنەوە
-            </p>
-            <button type="button" class="start-btn" onclick="openFormPage()">
-                <i class="fa-solid fa-user-plus"></i>
-                تۆمارکردن
-            </button>
-        </section>
+<!-- لاپەڕەی یەکەم -->
+<section class="welcome-card no-print" id="landingSection">
 
-        <!-- فۆرمی تۆمارکردن -->
-        <div class="card no-print" id="formCard" style="display: none;">
-            <div class="card-header">
-                <button type="button" class="back-home-btn" onclick="backToLanding()">
-                    <i class="fa-solid fa-arrow-right"></i> دەستپێک
-                </button>
-                <h2>فۆرمی تۆمارکردنی ئەندام</h2>
-            </div>
-            <div class="card-body">
-                <form id="regForm" onsubmit="submitData(event)">
-                    <div class="form-group">
-                        <label>ناوی سیانی <span class="req">*</span></label>
-                        <input type="text" id="fullName" required placeholder="ناوی سیانی بنووسە" oninput="validateKurdish(this)">
-                    </div>
-
-                    <div class="form-group">
-                        <label>ژمارە تەلەفۆن <span class="req">*</span></label>
-                        <input type="tel" id="phone" required placeholder="0770XXXXXXX" oninput="validateEnglishNumbers(this)">
-                    </div>
-
-                    <div class="form-group">
-                        <label>ڕەگەز <span class="req">*</span></label>
-                        <select id="gender" required>
-                            <option value="">ڕەگەز هەڵبژێرە</option>
-                            <option value="نێر">نێر</option>
-                            <option value="مێ">مێ</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>ئیمەیل <span class="req">*</span></label>
-                        <input type="email" id="email" required placeholder="example@email.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label>ناوی شار <span class="req">*</span></label>
-                        <select id="city" required>
-                            <option value="">شار هەڵبژێرە</option>
-                            <option value="سلێمانی">سلێمانی</option>
-                            <option value="شارباژێر">شارباژێر</option>
-                            <option value="چەمچەماڵ">چەمچەماڵ</option>
-                            <option value="دەربەندیخان">دەربەندیخان</option>
-                            <option value="کەلار">کەلار</option>
-                            <option value="ڕانیە">ڕانیە</option>
-                            <option value="قەڵادزێ">قەڵادزێ</option>
-                            <option value="شارەزوور">شارەزوور</option>
-                            <option value="هەڵەبجە">هەڵەبجە</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>سنوری کۆمیتە <span class="req">*</span></label>
-                        <select id="committee" required>
-                            <option value="">کۆمیتە هەڵبژێرە (١ تا ١٦)</option>
-                            <option value="کۆمیتەی ١">کۆمیتەی ١</option>
-                            <option value="کۆمیتەی ٢">کۆمیتەی ٢</option>
-                            <option value="کۆمیتەی ٣">کۆمیتەی ٣</option>
-                            <option value="کۆمیتەی ٤">کۆمیتەی ٤</option>
-                            <option value="کۆمیتەی ٥">کۆمیتەی ٥</option>
-                            <option value="کۆمیتەی ٦">کۆمیتەی ٦</option>
-                            <option value="کۆمیتەی ٧">کۆمیتەی ٧</option>
-                            <option value="کۆمیتەی ٨">کۆمیتەی ٨</option>
-                            <option value="کۆمیتەی ٩">کۆمیتەی ٩</option>
-                            <option value="کۆمیتەی ١٠">کۆمیتەی ١٠</option>
-                            <option value="کۆمیتەی ١١">کۆمیتەی ١١</option>
-                            <option value="کۆمیتەی ١٢">کۆمیتەی ١٢</option>
-                            <option value="کۆمیتەی ١٣">کۆمیتەی ١٣</option>
-                            <option value="کۆمیتەی ١٤">کۆمیتەی ١٤</option>
-                            <option value="کۆمیتەی ١٥">کۆمیتەی ١٥</option>
-                            <option value="کۆمیتەی ١٦">کۆمیتەی ١٦</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>ئاستی خوێندن <span class="req">*</span></label>
-                        <select id="educationLevel" onchange="checkEducationLevel()" required>
-                            <option value="">ئاستی خوێندن هەڵبژێرە</option>
-                            <option value="ئامادەیی">خۆێندکاری ئامادەیی</option>
-                            <option value="پەیمانگا">خۆێندکاری پەیمانگا</option>
-                            <option value="زانکۆ">خۆێندکاری زانکۆ</option>
-                            <option value="دەرچوو">دەرچوو (زانکۆ و پەیمانگا و ئامادەیی)</option>
-                        </select>
-                    </div>
-
-                    <div id="educationExtraBox" class="dynamic-box">
-                        <label id="eduLabel"></label>
-                        <input type="text" id="educationDetail" oninput="validateKurdish(this)">
-                    </div
-
-                         <div class="form-group">
-                        <label>/ تەمەن <span class="req">*</span></label>
-                        <input type="text" id="voterCard"  placeholder="تەمەن بنوسە" oninput="handleVoterCardInput()">
-                    </div>
-
-
-                    <div class="form-group">
-                        <label>ژمارەی دەنگدەر/کارتی دەنگدان <span class="">*</span></label>
-                        <input type="text" id="voterCard"  placeholder="ژمارەی کارتی دەنگدان بنووسە" oninput="handleVoterCardInput()">
-                    </div>
-
-                        </div>
-                        <div id="familyVotersContainer"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>جۆری ئەندامێتی <span class="req">*</span></label>
-                        <select id="membershipType" onchange="checkMembershipType()" required>
-                            <option value="">جۆری ئەندامێتی هەڵبژێرە</option>
-                            <option value="ئەندام">ئەندام</option>
-                            <option value="بەرپرسی تیم">بەرپرسی تیم</option>
-                        </select>
-                    </div>
-
-                    <div id="teamMembersBox" class="dynamic-box">
-                        <label>ناوی تەواوی هەر ١٠ ئەندامی تیمەکە بنووسە (ناچارییە):</label>
-                        <div id="tenInputsContainer"></div>
-                    </div>
-
-                    <button type="submit" class="submit-btn" id="submitBtn">تۆمار کردن</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- پەیامی سەرکەوتنی تۆمارکردن -->
-        <div id="successSection" class="no-print">
-            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-            <div class="congrats-banner">
-                پیرۆزە تۆ ئێستا ئەندامێکی چالاک و خۆبەخشیت لە بەشی گەنجانی مەڵبەندی ١ی سلێمانی یەکێتی نیشتیمانی کوردستان
-            </div>
-            <button type="button" class="start-btn" onclick="resetAndOpenForm()">
-                تۆمارکردنێکی تر
-            </button>
-        </div>
-
-        <!-- بەشی بەڕێوەبەر -->
-        <div id="adminSection" class="card">
-            <div class="card-header" style="background: #212529;">
-                <h2>بەشی بەڕێوەبەر - هەویەی تۆمارکراوەکان</h2>
-            </div>
-            <div class="card-body">
-                <div class="no-print" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
-                    <div style="display: flex; gap: 8px;">
-                        <button type="button" onclick="hideAdmin()" style="padding: 7px 15px; background: #dc3545; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">داخستنی بەش</button>
-                        <button type="button" onclick="window.print()" style="padding: 7px 15px; background: var(--primary-green); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;"><i class="fa-solid fa-print"></i> چاپکردن</button>
-                    </div>
-                    <div id="loginCountDisplay" style="background: var(--light-green); color: var(--primary-green); padding: 6px 12px; border-radius: 6px; font-weight: bold; font-size: 0.9rem;"></div>
-                </div>
-                <div id="adminCardsContent">بارکردنی هەویەکان...</div>
-            </div>
-        </div>
-
-        <div class="admin-btn-container no-print">
-            <button type="button" class="admin-login-btn" onclick="checkAdminPassword()">
-                <i class="fa-solid fa-lock"></i> چوونەژوورەوەی بەڕێوەبەر
-            </button>
-        </div>
+    <div class="welcome-slogan">
+        ئێمە بۆ یەکێتی و یەکێتیش بۆ هەمووان
     </div>
 
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycby-kbAKHRVFvT6aPHkDzebXkdkB5dl18PAkv-FG13JbhpsurEwprHBQz9uzKmXPcaaWFQ/exec';
-        const adminCode = "1234";
-        const LOCAL_STORAGE_KEY = "ey_malband1_registered_members_v1";
+    <p class="welcome-text">
+        پێکەوە خزمەتی شار و وڵات دەکەین،
+        هانی خۆمان و گەنجان دەدەین بۆ بنیاتنان و داهێنان،
+        وە پێکەوە ئەو دەرگایانە دەکەینەوە کە بە تەنها ناکرێنەوە.
+    </p>
 
-        const tenContainer = document.getElementById('tenInputsContainer');
-        for (let i = 1; i <= 10; i++) {
-            const div = document.createElement('div');
-            div.className = 'team-input';
-            div.innerHTML = `<input type="text" class="team-member-input" placeholder="ناوی ئەندامی تیم ژمارە ${i}" oninput="validateKurdish(this)">`;
-            tenContainer.appendChild(div);
-        }
+    <button type="button" class="start-btn" onclick="openFormPage()">
+        <i class="fa-solid fa-user-plus"></i>
+        تۆمارکردن
+    </button>
 
-        function openFormPage() {
-            document.getElementById('landingSection').style.display = 'none';
-            document.getElementById('successSection').style.display = 'none';
-            document.getElementById('formCard').style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+</section>
 
-        function backToLanding() {
-            document.getElementById('formCard').style.display = 'none';
-            document.getElementById('successSection').style.display = 'none';
-            document.getElementById('landingSection').style.display = 'block';
-        }
 
-        function resetAndOpenForm() {
-            document.getElementById('regForm').reset();
-            document.getElementById('educationExtraBox').style.display = 'none';
-            document.getElementById('familyVotersSection').style.display = 'none';
-            document.getElementById('familyVotersContainer').innerHTML = '';
-            document.getElementById('teamMembersBox').style.display = 'none';
-            document.getElementById('submitBtn').disabled = false;
-            document.getElementById('submitBtn').innerText = 'تۆمار کردن';
-            openFormPage();
-        }
+<!-- لاپەڕەی دووەم: فۆرمی تۆمارکردن -->
+<div class="card no-print" id="formCard" style="display:none;">
 
-        function validateKurdish(input) {
-            input.value = input.value.replace(/[a-zA-Z]/g, '');
-        }
+    <div class="card-header">
 
-        function validateEnglishNumbers(input) {
-            input.value = input.value.replace(/[^0-9]/g, '');
-        }
+        <button type="button" class="back-home-btn" onclick="backToLanding()">
+            <i class="fa-solid fa-arrow-right"></i>
+            دەستپێک
+        </button>
 
-        function checkEducationLevel() {
-            const level = document.getElementById('educationLevel').value;
-            const extraBox = document.getElementById('educationExtraBox');
-            const eduLabel = document.getElementById('eduLabel');
-            const eduDetailInput = document.getElementById('educationDetail');
+        <h2>فۆرمی تۆمارکردنی ئەندام</h2>
 
-            if (!level) {
-                extraBox.style.display = 'none';
-                eduDetailInput.removeAttribute('required');
-                eduDetailInput.value = '';
-                return;
-            }
+    </div>
 
-            extraBox.style.display = 'block';
-            eduDetailInput.setAttribute('required', 'true');
+    <div class="card-body">
 
-            if (level === 'دەرچوو') {
-                eduLabel.innerText = 'ناوی زانکۆ و پەیمانگا و ئامادەیی:';
-                eduDetailInput.placeholder = 'ناوی زانکۆ، پەیمانگا، یان ئامادەیی بنووسە';
-            } else {
-                eduLabel.innerText = `ناوی ${level}:`;
-                eduDetailInput.placeholder = `ناوی ${level} بنووسە`;
-            }
-        }
+        <form id="regForm" onsubmit="submitData(event)">
 
-        function handleVoterCardInput() {
-            const voterInput = document.getElementById('voterCard');
-            validateEnglishNumbers(voterInput);
-            const familySection = document.getElementById('familyVotersSection');
-            if (voterInput.value.trim().length > 0) {
-                familySection.style.display = 'block';
-            } else {
-                familySection.style.display = 'none';
-                document.getElementById('familyVoterCount').value = '0';
-                document.getElementById('familyVotersContainer').innerHTML = '';
-            }
-        }
+            <div class="form-group">
+                <label>ناوی سیانی <span class="req">*</span></label>
+                <input type="text" id="fullName" required
+                placeholder="ناوی سیانی بنووسە"
+                oninput="validateKurdish(this)">
+            </div>
 
-        function renderFamilyVoterInputs() {
-            const count = parseInt(document.getElementById('familyVoterCount').value, 10) || 0;
-            const container = document.getElementById('familyVotersContainer');
-            container.innerHTML = '';
+            <div class="form-group">
+                <label>ژمارە تەلەفۆن <span class="req">*</span></label>
+                <input type="tel" id="phone" required
+                placeholder="0770XXXXXXX"
+                oninput="validateEnglishNumbers(this)">
+            </div>
 
-            for (let i = 1; i <= count; i++) {
-                const row = document.createElement('div');
-                row.className = 'family-member-row';
-                row.innerHTML = `
-                    <div class="family-member-title">دەنگدەری خێزان ژمارە ${i}</div>
-                    <input type="text" class="family-voter-name" required placeholder="ناوی دەنگدەر ${i}" oninput="validateKurdish(this)">
-                    <input type="text" class="family-voter-card" required placeholder="ژمارەی کارتی دەنگدان ${i}" oninput="validateEnglishNumbers(this)">
-                `;
-                container.appendChild(row);
-            }
-        }
+            <div class="form-group">
+                <label>ڕەگەز <span class="req">*</span></label>
+                <select id="gender" required>
+                    <option value="">ڕەگەز هەڵبژێرە</option>
+                    <option value="نێر">نێر</option>
+                    <option value="مێ">مێ</option>
+                </select>
+            </div>
 
-        function checkMembershipType() {
-            const type = document.getElementById('membershipType').value;
-            const box = document.getElementById('teamMembersBox');
-            const teamInputs = document.querySelectorAll('.team-member-input');
+            <div class="form-group">
+                <label>ئیمەیل <span class="req">*</span></label>
+                <input type="email" id="email" required
+                placeholder="example@email.com">
+            </div>
 
-            if (type === 'بەرپرسی تیم') {
-                box.style.display = 'block';
-                teamInputs.forEach(input => input.setAttribute('required', 'true'));
-            } else {
-                box.style.display = 'none';
-                teamInputs.forEach(input => {
-                    input.removeAttribute('required');
-                    input.value = '';
-                });
-            }
-        }
+            <div class="form-group">
+                <label>ناوی شار <span class="req">*</span></label>
+                <select id="city" required>
+                    <option value="">شار هەڵبژێرە</option>
+                    <option value="سلێمانی">سلێمانی</option>
+                    <option value="شارباژێر">شارباژێر</option>
+                    <option value="چەمچەماڵ">چەمچەماڵ</option>
+                    <option value="دەربەندیخان">دەربەندیخان</option>
+                    <option value="کەلار">کەلار</option>
+                    <option value="ڕانیە">ڕانیە</option>
+                    <option value="قەڵادزێ">قەڵادزێ</option>
+                    <option value="شارەزوور">شارەزوور</option>
+                    <option value="هەڵەبجە">هەڵەبجە</option>
+                </select>
+            </div>
 
-        function saveRecordLocally(record) {
-            const existing = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
-            existing.unshift(record);
-            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(existing));
-        }
+            <div class="form-group">
+                <label>سنوری کۆمیتە <span class="req">*</span></label>
+                <select id="committee" required>
+                    <option value="">کۆمیتە هەڵبژێرە</option>
+                    <option>کۆمیتەی ١</option>
+                    <option>کۆمیتەی ٢</option>
+                    <option>کۆمیتەی ٣</option>
+                    <option>کۆمیتەی ٤</option>
+                    <option>کۆمیتەی ٥</option>
+                    <option>کۆمیتەی ٦</option>
+                    <option>کۆمیتەی ٧</option>
+                    <option>کۆمیتەی ٨</option>
+                    <option>کۆمیتەی ٩</option>
+                    <option>کۆمیتەی ١٠</option>
+                    <option>کۆمیتەی ١١</option>
+                    <option>کۆمیتەی ١٢</option>
+                    <option>کۆمیتەی ١٣</option>
+                    <option>کۆمیتەی ١٤</option>
+                    <option>کۆمیتەی ١٥</option>
+                    <option>کۆمیتەی ١٦</option>
+                </select>
+            </div>
 
-        async function submitData(e) {
-            e.preventDefault();
+            <div class="form-group">
+                <label>ئاستی خوێندن <span class="req">*</span></label>
+                <select id="educationLevel" onchange="checkEducationLevel()" required>
+                    <option value="">ئاستی خوێندن هەڵبژێرە</option>
+                    <option value="ئامادەیی">خوێندکاری ئامادەیی</option>
+                    <option value="پەیمانگا">خوێندکاری پەیمانگا</option>
+                    <option value="زانکۆ">خوێندکاری زانکۆ</option>
+                    <option value="دەرچوو">دەرچوو</option>
+                </select>
+            </div>
 
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.disabled = true;
-            submitBtn.innerText = 'چاوەڕوان بە ناردن...';
+            <div id="educationExtraBox" class="dynamic-box">
+                <label id="eduLabel"></label>
+                <input type="text" id="educationDetail"
+                oninput="validateKurdish(this)">
+            </div>
 
-            const fullNameVal = document.getElementById('fullName').value.trim();
-            const phoneVal = document.getElementById('phone').value.trim();
-            const genderVal = document.getElementById('gender').value;
-            const emailVal = document.getElementById('email').value.trim();
-            const cityVal = document.getElementById('city').value;
-            const committeeVal = document.getElementById('committee').value;
-            const eduLevelVal = document.getElementById('educationLevel').value;
-            const eduDetailVal = document.getElementById('educationDetail').value.trim();
-            const voterCardVal = document.getElementById('voterCard').value.trim();
-            const typeVal = document.getElementById('membershipType').value;
+            <div class="form-group">
+                <label>تەمەن <span class="req">*</span></label>
+                <input type="number" id="age" min="1" max="120"
+                required placeholder="تەمەن بنووسە">
+            </div>
 
-            const familyVoters = [];
-            document.querySelectorAll('.family-member-row').forEach((row, idx) => {
-                const name = row.querySelector('.family-voter-name').value.trim();
-                const card = row.querySelector('.family-voter-card').value.trim();
-                familyVoters.push({ index: idx + 1, name, card });
+            <div class="form-group">
+                <label>ژمارەی کارتی دەنگدان</label>
+                <input type="text" id="voterCard"
+                placeholder="ژمارەی کارتی دەنگدان بنووسە"
+                oninput="validateEnglishNumbers(this)">
+            </div>
+
+            <!-- هەڵبژاردنی جۆری ئەندامێتی لێرەیە -->
+            <div class="form-group">
+                <label>جۆری ئەندامێتی <span class="req">*</span></label>
+
+                <select id="membershipType"
+                onchange="checkMembershipType()" required>
+
+                    <option value="">جۆری ئەندامێتی هەڵبژێرە</option>
+                    <option value="ئەندام">ئەندام</option>
+                    <option value="بەرپرسی تیم">بەرپرسی تیم</option>
+
+                </select>
+            </div>
+
+            <!-- ئەگەر بەرپرسی تیم هەڵبژێردرا -->
+            <div id="teamMembersBox" class="dynamic-box">
+
+                <label>
+                    ناوی تەواوی هەر ١٠ ئەندامی تیمەکە بنووسە:
+                </label>
+
+                <div id="tenInputsContainer"></div>
+
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                تۆمارکردن
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+
+<!-- پەیامی سەرکەوتن -->
+<div id="successSection" class="no-print">
+
+    <div class="success-icon">
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+    <div class="congrats-banner">
+        پیرۆزە! تۆ ئێستا ئەندامێکی چالاک و خۆبەخشیت
+        لە بەشی گەنجانی مەڵبەندی ١ی سلێمانی
+        یەکێتی نیشتیمانی کوردستان.
+    </div>
+
+    <button type="button" class="start-btn" onclick="resetAndOpenForm()">
+        تۆمارکردنێکی تر
+    </button>
+
+</div>
+
+
+<!-- بەشی بەڕێوەبەر -->
+<div id="adminSection" class="card">
+
+    <div class="card-header" style="background:#212529;">
+        <h2>بەشی بەڕێوەبەر - هەویەی تۆمارکراوەکان</h2>
+    </div>
+
+    <div class="card-body">
+
+        <div class="no-print" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;flex-wrap:wrap;gap:10px;">
+
+            <div style="display:flex;gap:8px;">
+
+                <button type="button" onclick="hideAdmin()"
+                style="padding:7px 15px;background:#dc3545;color:white;border:none;border-radius:6px;cursor:pointer;">
+                    داخستنی بەش
+                </button>
+
+                <button type="button" onclick="window.print()"
+                style="padding:7px 15px;background:var(--primary-green);color:white;border:none;border-radius:6px;cursor:pointer;">
+                    <i class="fa-solid fa-print"></i>
+                    چاپکردن
+                </button>
+
+            </div>
+
+            <div id="loginCountDisplay"></div>
+
+        </div>
+
+        <div id="adminCardsContent">بارکردنی هەویەکان...</div>
+
+    </div>
+</div>
+
+
+<div class="admin-btn-container no-print">
+    <button type="button" class="admin-login-btn" onclick="checkAdminPassword()">
+        <i class="fa-solid fa-lock"></i>
+        چوونەژوورەوەی بەڕێوەبەر
+    </button>
+</div>
+
+</div>
+
+
+<script>
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycby-kbAKHRVFvT6aPHkDzebXkdkB5dl18PAkv-FG13JbhpsurEwprHBQz9uzKmXPcaaWFQ/exec';
+
+const adminCode = "1234";
+
+const LOCAL_STORAGE_KEY = "ey_malband1_registered_members_v1";
+
+
+// دروستکردنی خانەکانی ١٠ ئەندام
+const tenContainer = document.getElementById('tenInputsContainer');
+
+for (let i = 1; i <= 10; i++) {
+
+    const div = document.createElement('div');
+
+    div.className = 'team-input';
+
+    div.innerHTML = `
+        <input type="text"
+        class="team-member-input"
+        placeholder="ناوی ئەندامی تیم ژمارە ${i}"
+        oninput="validateKurdish(this)">
+    `;
+
+    tenContainer.appendChild(div);
+}
+
+
+// کردنەوەی فۆرمی تۆمارکردن
+function openFormPage() {
+
+    document.getElementById('landingSection').style.display = 'none';
+
+    document.getElementById('successSection').style.display = 'none';
+
+    document.getElementById('formCard').style.display = 'block';
+
+    window.scrollTo({top:0,behavior:'smooth'});
+}
+
+
+// گەڕانەوە بۆ لاپەڕەی سەرەتا
+function backToLanding() {
+
+    document.getElementById('formCard').style.display = 'none';
+
+    document.getElementById('successSection').style.display = 'none';
+
+    document.getElementById('landingSection').style.display = 'block';
+
+}
+
+
+// تۆمارکردنێکی نوێ
+function resetAndOpenForm() {
+
+    document.getElementById('regForm').reset();
+
+    document.getElementById('educationExtraBox').style.display = 'none';
+
+    document.getElementById('teamMembersBox').style.display = 'none';
+
+    document.getElementById('submitBtn').disabled = false;
+
+    document.getElementById('submitBtn').innerText = 'تۆمارکردن';
+
+    document.querySelectorAll('.team-member-input').forEach(input => {
+        input.removeAttribute('required');
+    });
+
+    openFormPage();
+}
+
+
+// پاککردنەوەی پیتی ئینگلیزی
+function validateKurdish(input) {
+
+    input.value = input.value.replace(/[a-zA-Z]/g,'');
+
+}
+
+
+// تەنها ژمارەی ئینگلیزی
+function validateEnglishNumbers(input) {
+
+    input.value = input.value.replace(/[^0-9]/g,'');
+
+}
+
+
+// ئاستی خوێندن
+function checkEducationLevel() {
+
+    const level = document.getElementById('educationLevel').value;
+
+    const extraBox = document.getElementById('educationExtraBox');
+
+    const eduLabel = document.getElementById('eduLabel');
+
+    const eduInput = document.getElementById('educationDetail');
+
+    if (!level) {
+
+        extraBox.style.display = 'none';
+
+        eduInput.removeAttribute('required');
+
+        eduInput.value = '';
+
+        return;
+    }
+
+    extraBox.style.display = 'block';
+
+    eduInput.setAttribute('required','true');
+
+    if (level === 'دەرچوو') {
+
+        eduLabel.innerText = 'ناوی زانکۆ و پەیمانگا و ئامادەیی:';
+
+        eduInput.placeholder = 'ناوی شوێنی خوێندن بنووسە';
+
+    } else {
+
+        eduLabel.innerText = `ناوی ${level}:`;
+
+        eduInput.placeholder = `ناوی ${level} بنووسە`;
+
+    }
+
+}
+
+
+// جۆری ئەندامێتی
+function checkMembershipType() {
+
+    const type = document.getElementById('membershipType').value;
+
+    const box = document.getElementById('teamMembersBox');
+
+    const teamInputs = document.querySelectorAll('.team-member-input');
+
+    if (type === 'بەرپرسی تیم') {
+
+        box.style.display = 'block';
+
+        teamInputs.forEach(input => {
+            input.setAttribute('required','true');
+        });
+
+    } else {
+
+        box.style.display = 'none';
+
+        teamInputs.forEach(input => {
+
+            input.removeAttribute('required');
+
+            input.value = '';
+
+        });
+
+    }
+
+}
+
+
+// پاشەکەوتکردنی ناوخۆیی
+function saveRecordLocally(record) {
+
+    const existing = JSON.parse(
+        localStorage.getItem(LOCAL_STORAGE_KEY) || '[]'
+    );
+
+    existing.unshift(record);
+
+    localStorage.setItem(
+        LOCAL_STORAGE_KEY,
+        JSON.stringify(existing)
+    );
+
+}
+
+
+// ناردنی زانیارییەکان
+async function submitData(e) {
+
+    e.preventDefault();
+
+    const submitBtn = document.getElementById('submitBtn');
+
+    submitBtn.disabled = true;
+
+    submitBtn.innerText = 'چاوەڕوان بە ناردن...';
+
+    const fullNameVal = document.getElementById('fullName').value.trim();
+
+    const phoneVal = document.getElementById('phone').value.trim();
+
+    const genderVal = document.getElementById('gender').value;
+
+    const emailVal = document.getElementById('email').value.trim();
+
+    const cityVal = document.getElementById('city').value;
+
+    const committeeVal = document.getElementById('committee').value;
+
+    const eduLevelVal = document.getElementById('educationLevel').value;
+
+    const eduDetailVal = document.getElementById('educationDetail').value.trim();
+
+    const ageVal = document.getElementById('age').value;
+
+    const voterCardVal = document.getElementById('voterCard').value.trim();
+
+    const typeVal = document.getElementById('membershipType').value;
+
+
+    const teamMembers = [];
+
+    if (typeVal === 'بەرپرسی تیم') {
+
+        document.querySelectorAll('.team-member-input').forEach((input,idx) => {
+
+            teamMembers.push({
+                index:idx+1,
+                name:input.value.trim()
             });
 
-            const teamMembers = [];
-            if (typeVal === 'بەرپرسی تیم') {
-                document.querySelectorAll('.team-member-input').forEach((input, idx) => {
-                    teamMembers.push({ index: idx + 1, name: input.value.trim() });
-                });
-            }
+        });
 
-            const record = {
-                id: 'EY-' + Date.now().toString().slice(-6),
-                timestamp: new Date().toLocaleString('ku-IQ'),
-                fullName: fullNameVal,
-                phone: phoneVal,
-                gender: genderVal,
-                email: emailVal,
-                city: cityVal,
-                committee: committeeVal,
-                educationLevel: eduLevelVal,
-                educationDetail: eduDetailVal,
-                voterCard: voterCardVal,
-                familyVoters,
-                membershipType: typeVal,
-                teamMembers
-            };
+    }
 
-            saveRecordLocally(record);
 
-            const payload = {
-                timestamp: record.timestamp,
-                fullName: record.fullName,
-                phone: record.phone,
-                gender: record.gender,
-                email: record.email,
-                city: record.city,
-                committee: record.committee,
-                education: `${record.educationLevel}: ${record.educationDetail}`,
-                voterCard: record.voterCard,
-                familyVoters: familyVoters.map(f => `${f.name} (${f.card})`).join(' | ') || 'نییە',
-                membershipType: record.membershipType,
-                teamMembers: teamMembers.length ? teamMembers.map(m => `${m.index}. ${m.name}`).join(' - ') : 'نییە'
-            };
+    const record = {
 
-            try {
-                await fetch(scriptURL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                    body: JSON.stringify(payload)
-                });
-            } catch (err) {
-                console.warn('Google Script sync note:', err);
-            }
+        id:'EY-' + Date.now().toString().slice(-6),
 
-            document.getElementById('formCard').style.display = 'none';
-            document.getElementById('successSection').style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        timestamp:new Date().toLocaleString('ku-IQ'),
 
-        function checkAdminPassword() {
-            const pass = prompt('تکایە کۆدی چوونەژوورەوەی بەڕێوەبەر بنووسە:');
-            if (pass === adminCode) {
-                let visits = parseInt(localStorage.getItem('adminLoginCount') || '0', 10) + 1;
-                localStorage.setItem('adminLoginCount', visits);
+        fullName:fullNameVal,
 
-                document.getElementById('adminSection').style.display = 'block';
-                document.getElementById('loginCountDisplay').innerHTML = `ژمارەی جارەکانی چوونەژوورەوە: <span style="color: #d90429;">${visits}</span> جار`;
+        phone:phoneVal,
 
-                renderAdminIdCards();
-                document.getElementById('adminSection').scrollIntoView({ behavior: 'smooth' });
-            } else if (pass !== null) {
-                alert('کۆدەکە هەڵەیە!');
-            }
-        }
+        gender:genderVal,
 
-        function hideAdmin() {
-            document.getElementById('adminSection').style.display = 'none';
-        }
+        email:emailVal,
 
-        function escapeHtml(str) {
-            return String(str || '').replace(/[&<>"']/g, s => ({
-                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-            }[s]));
-        }
+        city:cityVal,
 
-        function renderAdminIdCards() {
-            const container = document.getElementById('adminCardsContent');
-            const records = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
+        committee:committeeVal,
 
-            if (!records.length) {
-                container.innerHTML = '<p style="text-align:center; padding:1rem;">هیچ هەویەیەکی تۆمارکراو نییە.</p>';
-                return;
-            }
+        educationLevel:eduLevelVal,
 
-            const cardsHtml = records.map(rec => {
-                const familyHtml = (rec.familyVoters && rec.familyVoters.length)
-                    ? `<div class="sub-list-box"><strong>دەنگدەرانی خێزان (${rec.familyVoters.length}):</strong><br>${
-                        rec.familyVoters.map(f => `• ${escapeHtml(f.name)} — کارتی: <b>${escapeHtml(f.card)}</b>`).join('<br>')
-                    }</div>`
-                    : '';
+        educationDetail:eduDetailVal,
 
-                const teamHtml = (rec.teamMembers && rec.teamMembers.length)
-                    ? `<div class="sub-list-box"><strong>ئەندامانی تیم (١٠ ئەندام):</strong><br>${
-                        rec.teamMembers.map(m => `${m.index}. ${escapeHtml(m.name)}`).join(' ، ')
-                    }</div>`
-                    : '';
+        age:ageVal,
 
-                return `
-                    <div class="member-id-card">
-                        <div class="member-id-header">
-                            <h4>هەویەی ئەندامێتی — بەشی گەنجان</h4>
-                            <span class="member-id-badge">${escapeHtml(rec.id)}</span>
-                        </div>
-                        <div class="member-id-body">
-                            <p><strong>ناوی سیانی:</strong> ${escapeHtml(rec.fullName)}</p>
-                            <p><strong>ژمارە تەلەفۆن:</strong> ${escapeHtml(rec.phone)}</p>
-                            <p><strong>ڕەگەز:</strong> ${escapeHtml(rec.gender)}</p>
-                            <p><strong>ئیمەیل:</strong> ${escapeHtml(rec.email)}</p>
-                            <p><strong>شار:</strong> ${escapeHtml(rec.city)}</p>
-                            <p><strong>سنوری کۆمیتە:</strong> ${escapeHtml(rec.committee)}</p>
-                            <p><strong>ئاستی خوێندن:</strong> ${escapeHtml(rec.educationLevel)} (${escapeHtml(rec.educationDetail)})</p>
-                            <p><strong>ژمارەی کارتی دەنگدان:</strong> ${escapeHtml(rec.voterCard)}</p>
-                            <p><strong>جۆری ئەندامێتی:</strong> ${escapeHtml(rec.membershipType)}</p>
-                            <p><strong>کاتی تۆمارکردن:</strong> ${escapeHtml(rec.timestamp)}</p>
-                            ${familyHtml}
-                            ${teamHtml}
-                        </div>
-                    </div>
-                `;
-            }).join('');
+        voterCard:voterCardVal,
 
-            container.innerHTML = `<div class="admin-cards-grid">${cardsHtml}</div>`;
-        }
-    </script>
+        membershipType:typeVal,
+
+        teamMembers:teamMembers
+
+    };
+
+
+    try {
+
+        saveRecordLocally(record);
+
+    } catch(err) {
+
+        alert('کێشەیەک لە پاشەکەوتکردنی زانیارییەکان هەیە.');
+
+        submitBtn.disabled = false;
+
+        submitBtn.innerText = 'تۆمارکردن';
+
+        return;
+
+    }
+
+
+    const payload = {
+
+        timestamp:record.timestamp,
+
+        fullName:record.fullName,
+
+        phone:record.phone,
+
+        gender:record.gender,
+
+        email:record.email,
+
+        city:record.city,
+
+        committee:record.committee,
+
+        education:`${record.educationLevel}: ${record.educationDetail}`,
+
+        age:record.age,
+
+        voterCard:record.voterCard,
+
+        membershipType:record.membershipType,
+
+        teamMembers:teamMembers.length
+            ? teamMembers.map(m => `${m.index}. ${m.name}`).join(' - ')
+            : 'نییە'
+
+    };
+
+
+    try {
+
+        await fetch(scriptURL, {
+
+            method:'POST',
+
+            mode:'no-cors',
+
+            headers:{
+                'Content-Type':'text/plain;charset=utf-8'
+            },
+
+            body:JSON.stringify(payload)
+
+        });
+
+    } catch(err) {
+
+        console.warn('Google Script sync note:',err);
+
+    }
+
+
+    document.getElementById('formCard').style.display = 'none';
+
+    document.getElementById('successSection').style.display = 'block';
+
+    window.scrollTo({top:0,behavior:'smooth'});
+
+}
+
+
+// چوونەژوورەوەی بەڕێوەبەر
+function checkAdminPassword() {
+
+    const pass = prompt('تکایە کۆدی چوونەژوورەوەی بەڕێوەبەر بنووسە:');
+
+    if (pass === adminCode) {
+
+        let visits = parseInt(
+            localStorage.getItem('adminLoginCount') || '0',
+            10
+        ) + 1;
+
+        localStorage.setItem('adminLoginCount',visits);
+
+        document.getElementById('adminSection').style.display = 'block';
+
+        document.getElementById('loginCountDisplay').innerHTML =
+        `ژمارەی جارەکانی چوونەژوورەوە: ${visits} جار`;
+
+        renderAdminIdCards();
+
+        document.getElementById('adminSection').scrollIntoView({
+            behavior:'smooth'
+        });
+
+    } else if (pass !== null) {
+
+        alert('کۆدەکە هەڵەیە!');
+
+    }
+
+}
+
+
+// داخستنی بەشی بەڕێوەبەر
+function hideAdmin() {
+
+    document.getElementById('adminSection').style.display = 'none';
+
+}
+
+
+// پاراستنی نیشاندانی دەق
+function escapeHtml(str) {
+
+    return String(str || '').replace(/[&<>"']/g,s => ({
+
+        '&':'&amp;',
+
+        '<':'&lt;',
+
+        '>':'&gt;',
+
+        '"':'&quot;',
+
+        "'":'&#39;'
+
+    }[s]));
+
+}
+
+
+// پیشاندانی هەویەکان
+function renderAdminIdCards() {
+
+    const container = document.getElementById('adminCardsContent');
+
+    const records = JSON.parse(
+        localStorage.getItem(LOCAL_STORAGE_KEY) || '[]'
+    );
+
+    if (!records.length) {
+
+        container.innerHTML = `
+            <p style="text-align:center;padding:1rem;">
+                هیچ هەویەیەکی تۆمارکراو نییە.
+            </p>
+        `;
+
+        return;
+
+    }
+
+
+    const cardsHtml = records.map(rec => {
+
+        const teamHtml = (rec.teamMembers && rec.teamMembers.length)
+
+            ? `
+                <div class="sub-list-box">
+                    <strong>ئەندامانی تیم:</strong><br>
+                    ${rec.teamMembers.map(m =>
+                        `${m.index}. ${escapeHtml(m.name)}`
+                    ).join('<br>')}
+                </div>
+            `
+
+            : '';
+
+
+        return `
+
+            <div class="member-id-card">
+
+                <div class="member-id-header">
+
+                    <h4>هەویەی ئەندامێتی — بەشی گەنجان</h4>
+
+                    <span class="member-id-badge">
+                        ${escapeHtml(rec.id)}
+                    </span>
+
+                </div>
+
+                <div class="member-id-body">
+
+                    <p><strong>ناوی سیانی:</strong> ${escapeHtml(rec.fullName)}</p>
+
+                    <p><strong>ژمارە تەلەفۆن:</strong> ${escapeHtml(rec.phone)}</p>
+
+                    <p><strong>ڕەگەز:</strong> ${escapeHtml(rec.gender)}</p>
+
+                    <p><strong>ئیمەیل:</strong> ${escapeHtml(rec.email)}</p>
+
+                    <p><strong>شار:</strong> ${escapeHtml(rec.city)}</p>
+
+                    <p><strong>سنوری کۆمیتە:</strong> ${escapeHtml(rec.committee)}</p>
+
+                    <p><strong>ئاستی خوێندن:</strong>
+                    ${escapeHtml(rec.educationLevel)}
+                    (${escapeHtml(rec.educationDetail)})</p>
+
+                    <p><strong>تەمەن:</strong> ${escapeHtml(rec.age)}</p>
+
+                    <p><strong>ژمارەی کارتی دەنگدان:</strong>
+                    ${escapeHtml(rec.voterCard)}</p>
+
+                    <p><strong>جۆری ئەندامێتی:</strong>
+                    ${escapeHtml(rec.membershipType)}</p>
+
+                    <p><strong>کاتی تۆمارکردن:</strong>
+                    ${escapeHtml(rec.timestamp)}</p>
+
+                    ${teamHtml}
+
+                </div>
+
+            </div>
+
+        `;
+
+    }).join('');
+
+
+    container.innerHTML = `
+        <div class="admin-cards-grid">
+            ${cardsHtml}
+        </div>
+    `;
+
+}
+
+</script>
+
 </body>
 </html>
