@@ -530,29 +530,19 @@
                     <div id="educationExtraBox" class="dynamic-box">
                         <label id="eduLabel"></label>
                         <input type="text" id="educationDetail" oninput="validateKurdish(this)">
+                    </div
+
+                         <div class="form-group">
+                        <label>/ تەمەن <span class="req">*</span></label>
+                        <input type="text" id="voterCard"  placeholder="تەمەن بنوسە" oninput="handleVoterCardInput()">
                     </div>
+
 
                     <div class="form-group">
                         <label>ژمارەی دەنگدەر/کارتی دەنگدان <span class="req">*</span></label>
-                        <input type="text" id="voterCard" required placeholder="ژمارەی کارتی دەنگدان بنووسە" oninput="handleVoterCardInput()">
+                        <input type="text" id="voterCard"  placeholder="ژمارەی کارتی دەنگدان بنووسە" oninput="handleVoterCardInput()">
                     </div>
 
-                    <div id="familyVotersSection" class="dynamic-box">
-                        <div class="form-group" style="margin-bottom: 0.8rem;">
-                            <label>ژمارەی دەنگدەر لە خێزان:</label>
-                            <select id="familyVoterCount" onchange="renderFamilyVoterInputs()">
-                                <option value="0">هەڵبژێرە (بۆ نموونە ٤)</option>
-                                <option value="1">١</option>
-                                <option value="2">٢</option>
-                                <option value="3">٣</option>
-                                <option value="4">٤</option>
-                                <option value="5">٥</option>
-                                <option value="6">٦</option>
-                                <option value="7">٧</option>
-                                <option value="8">٨</option>
-                                <option value="9">٩</option>
-                                <option value="10">١٠</option>
-                            </select>
                         </div>
                         <div id="familyVotersContainer"></div>
                     </div>
